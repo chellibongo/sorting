@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 public class FisherYatesShuffle {
@@ -14,15 +15,18 @@ public class FisherYatesShuffle {
     }
 
     private static ArrayList<Integer> Shuffle(ArrayList<Integer> numIn) {
-        ArrayList<Integer> numOut = new ArrayList<Integer>();
+
+        //Generate random seed
         Random rand = new Random();
 
-        while(numIn.size() > 0) {
-            int n = rand.nextInt(0, numIn.size());
-            numOut.add(numIn.get(n));
-            numIn.remove(n);
+        //iterate backwards through ArrayList
+        for(int i = numIn.size() - 1; i > 1; i--) {
+            //pick a random element in array
+            int j = rand.nextInt(0,numIn.size());
+            //swap current element with random one picked
+            Collections.swap(numIn, i, j);
         }
 
-        return numOut;
+        return numIn;
     }
 }
