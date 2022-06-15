@@ -22,7 +22,7 @@ public class FisherYatesShuffle {
         //iterate backwards through ArrayList
         for(int i = numIn.size() - 1; i > 1; i--) {
             //pick a random element in array
-            int j = rand.nextInt(0,numIn.size());
+            int j = rand.nextInt(0, i);
             //swap current element with random one picked
             Collections.swap(numIn, i, j);
         }
