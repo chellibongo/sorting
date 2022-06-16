@@ -14,6 +14,18 @@ public class FisherYatesShuffle {
         System.out.println(Shuffle(numbers));
     }
 
+    public void Shuffle(int[] intArray) {
+        Random rand = new Random();
+
+        for(int i = intArray.length - 1; i > 1; i--) {
+            int j = rand.nextInt(0, i);
+
+            int temp = intArray[i];
+            intArray[i] = intArray[j];
+            intArray[j] = temp;
+        }
+    }
+
     private static ArrayList<Integer> Shuffle(ArrayList<Integer> numIn) {
 
         //Generate random seed
